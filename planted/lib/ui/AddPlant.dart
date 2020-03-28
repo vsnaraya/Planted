@@ -54,12 +54,6 @@ class _AddPlantPageState extends State<AddPlantPage> {
         StorageUploadTask uploadTask = firebaseStorageRef.putFile(plantImage);
         StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
 
-        if (this.mounted) {
-          setState(() {
-            print("Plant image uploaded");
-          });
-        }
-
         await databaseReference.child("plants").push().set({
           'uid': currentUser.uid,
           'plantName': nameController.text,
