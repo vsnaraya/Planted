@@ -1,0 +1,75 @@
+.gallery-title { text-align:center }
+.photo-gallery { position:relative; width:100% }
+.photo-gallery .grid-sizer,
+.photo-gallery .item { float:left; width:33.2% }
+.photo-gallery .item.ready .photo-box { display:block; overflow:hidden }
+.photo-gallery .item .photo-container { position:relative; padding:5px; overflow:hidden }
+.photo-gallery .item img { vertical-align:middle; width:100%; opacity:0; -moz-transition:all .5s ease; -webkit-transition:all .5s ease; transition:all .5s ease }
+.photo-gallery .item.ready img { opacity:1 }
+.photo-gallery .caption { display:none; padding:5px 10px; color:#FFF !important; text-align:left; font-size:1em; line-height:1.2; position:absolute; left:5px; right:5px; top:5px; background:#333; background:rgba(25,25,25,.8); white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.photo-gallery .buynow-link { display:none; padding:10px; font-size:1em; border:none; line-height:1.2; color:#FFF !important; text-decoration:none !important; background:#333; background:rgba(25,25,25,.8); position:absolute; right:5px; bottom:5px }
+.photo-gallery .item.ready .buynow-link { display:block }
+.photo-gallery .item .tag-list { display:none }
+.photo-gallery .item.ready .tag-list { display:block }
+.photo-gallery .item.ready .photo-box:focus { outline:2px solid }
+.photo-gallery .item.ready .photo-box:focus .caption { display:block }
+.photo-gallery .item.ready .photo-box:focus img { transform:scale(1.05) }
+
+.no-touch .photo-gallery .buynow-link:hover { color:#fff; background:#000 }
+.no-touch .photo-gallery .item.ready:hover .caption { display:block }
+.touch .photo-gallery .item.ready .caption { display:block }
+
+.no-js .photo-gallery .item img { opacity:1 }
+.no-js .photo-gallery .caption,
+.no-js .photo-gallery .buynow-link { display:block }
+
+.photo-gallery .loader { display:none; height:24px; line-height:24px; text-indent:-9999px; background:url(/info/images/loader_blink.gif) no-repeat 50% 50%; position:absolute; left:5px; right:5px; bottom:10px  }
+.photo-gallery.loading { padding-bottom:60px }
+.photo-gallery.loading .loader { display:block }
+ 
+body.ps-active, body.ps-building, div.ps-active, div.ps-building { color:#fff; background:#000; overflow: hidden }
+body.ps-active *, div.ps-active * { -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); display: none }
+body.ps-active *:focus, div.ps-active *:focus { outline: 0 }
+div.ps-document-overlay { background: #000 }
+div.ps-uilayer { background: #000; cursor: pointer }
+div.ps-zoom-pan-rotate { background: #000 }
+div.ps-zoom-pan-rotate * { display: block; }
+div.ps-zoom-pan-rotate ~ div.ps-toolbar { display:none !important }
+div.ps-carousel-item-loading { background: url(/info/images/loader_bb_32.gif) no-repeat 50% 50% }
+div.ps-carousel-item-error { background: url(/info/images/error.gif) no-repeat 50% 50% }
+div.ps-caption { background:#000; color: #FFF; font-size: 13px; font-family: "Lucida Grande", Helvetica, Arial,Verdana, sans-serif; text-align: center }
+div.ps-caption *  { display: inline; }
+div.ps-caption-bottom { border-top: 1px solid #42403f; border-bottom: none; min-height: 44px }
+div.ps-caption-content { padding: 13px; display: block }
+div.ps-toolbar { display:block !important; opacity:1 !important; max-width:300px; height:44px; left:50% !important; margin-left:-150px !important; background:rgba(0,0,0,0.8) !important }
+div.ps-toolbar * { display: block }
+div.ps-toolbar > button { float:left; width:25%; border:none; background:transparent; box-sizing:border-box }
+div.ps-toolbar > button span.ps-toolbar-content { width:44px; height:44px; margin:0 auto; text-indent:-9999px; background-image:url(/info/images/photoswipe_icons.png); background-repeat:no-repeat }
+div.ps-toolbar > button:focus { background:#585858 }
+
+button.ps-toolbar-close span.ps-toolbar-content { background-position: 0 0 }
+button.ps-toolbar-previous span.ps-toolbar-content { background-position: -44px 0 }
+button.ps-toolbar-previous-disabled span.ps-toolbar-content { background-position: -44px -44px }
+button.ps-toolbar-next span.ps-toolbar-content { background-position: -132px 0 }
+button.ps-toolbar-next-disabled span.ps-toolbar-content { background-position: -132px -44px }
+button.ps-toolbar-play span.ps-toolbar-content { background-position: -88px 0 }
+
+/* Hi-res display */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 240dpi)
+{
+	div.ps-toolbar > button:focus span.ps-toolbar-content { -moz-background-size: 176px 88px; -o-background-size: 176px 88px; -webkit-background-size: 176px 88px; background-size: 176px 88px; background-image: url(/info/images/photoswipe_icons2x.png) }
+}
+
+.photo-gallery .item .video-thumbnail:after { content:'\25BA'; position:absolute; top:50%; left:50%; width:70px; height:40px; margin:-20px 0 0 -35px; font-size:20px; text-align:center; line-height:40px; color:#fff; background:#000; background:rgba(0,0,0,0.5); border-radius:15px }
+
+@media screen and ( max-width: 767px ) {
+    .photo-gallery .grid-sizer,
+    .photo-gallery .item { width:50% }
+}
+
+@media only screen and (max-width:479px) {
+    .photo-gallery .grid-sizer,
+    .photo-gallery .item { width:100% }
+}
